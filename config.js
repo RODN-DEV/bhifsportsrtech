@@ -1,10 +1,8 @@
 // ==================== CONFIGURATION ====================
 // Protected | Bhif Sports Security Layer
 
-// Obfuscated subscription registry — decoded at runtime only
-// To add a user: see admin instructions at bottom of this file
 ;(function() {
-    var _$c = 'eyJNMlE0TkdFMFpEY3RaRFkzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In19';
+    var _$c = 'eyJZVGRoWmpNek9XVXROekppIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNR016TWpCaFlUQXRORGMzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNMlE0TkdFMFpEY3RaRFkzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In19';
     var _$d = function(s) { try { return JSON.parse(atob(s)); } catch(e) { return {}; } };
     Object.defineProperty(window, 'systemConfig', {
         value: _$d(_$c),
@@ -43,11 +41,3 @@ const PLAN_PRICES = {
     "DIAMOND PLAN": "$60/week"
 };
 Object.freeze(PLAN_PRICES);
-
-// ── HOW TO ADD A NEW SUBSCRIBER (admin only) ─────────────────────────
-// 1. Get the user's Device ID from the app
-// 2. On your LOCAL machine console, run:
-//    btoa(JSON.stringify({"THEIR_DEVICE_ID":{"a":btoa("all"),"e":btoa("2026-12-31")},"EXISTING_ID":{"a":btoa("all"),"e":btoa("2030-12-31")}}))
-// 3. Replace _$c value above with the result
-// 4. Push to GitHub
-// ─────────────────────────────────────────────────────────────────────
