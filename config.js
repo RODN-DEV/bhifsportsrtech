@@ -2,7 +2,7 @@
 // Protected | Bhif Sports Security Layer
 
 ;(function() {
-    var _$c = 'eyJZVGRoWmpNek9XVXROekppIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNR016TWpCaFlUQXRORGMzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNMlE0TkdFMFpEY3RaRFkzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In19';
+    var _$c = 'eyJZVGRoWmpNek9XVXROekppIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNR016TWpCaFlUQXRORGMzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNall3WkRRM05qUXROV1psIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNMlE0TkdFMFpEY3RaRFkzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In19';
     var _$d = function(s) { try { return JSON.parse(atob(s)); } catch(e) { return {}; } };
     Object.defineProperty(window, 'systemConfig', {
         value: _$d(_$c),
@@ -13,7 +13,6 @@
     _$c = null;
 })();
 
-// Sport Rules for Live Timer
 const SPORT_RULES = {
     football:   { periods: 2, pLen: 45, break: 15, label: "Half", maxLive: 110 },
     basketball: { periods: 4, pLen: 12, break: 5,  longBreak: 15, longBreakAt: 2, label: "Q", timeMultiplier: 0.4, maxLive: 140 },
