@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bhif Sports</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS - FIXED PATH -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="active">
+        <div class="app-logo-wrapper">
+            <div class="logo-text-container">
+                <span class="logo-b">𝐁</span>
+                <span class="logo-s">𝐒</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Banner -->
+    <div id="notif-banner" class="hidden" onclick="toggleNotifications(); dismissBanner();">
+        <div class="banner-content">
+            <div class="banner-icon-circle">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="banner-text-wrapper">
+                <div class="banner-title">New Message</div>
+                <div id="banner-text" class="banner-text">Welcome to Bhif Sports!</div>
+            </div>
+        </div>
+        <div class="banner-close" onclick="event.stopPropagation(); dismissBanner();">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+
+    <!-- Main App View -->
+    <div id="app-view" class="hidden">
+        <header>
+            <div class="header-left">
+                <button id="back-nav" class="back-btn hidden" onclick="goBack()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="header-title">
+                    <span class="bhif-txt">𝗕𝗛𝗜𝗙</span> <span class="sports-txt">𝗦𝗣𝗢𝗥𝗧𝗦</span>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <div class="app-logo-wrapper" style="width: 40px; height: 40px; border-radius: 10px; box-shadow:none; margin:0;">
+                    <div class="logo-text-container">
+                        <span class="logo-b" style="font-size: 38px; left: 5.5px;">𝐁</span>
+                        <span class="logo-s" style="font-size: 38px; left: 15.5px;">𝐒</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div id="notification-btn" onclick="toggleNotifications()">
+                    <i class="fas fa-bell"></i>
+                    <div id="notif-dot" class="notif-badge hidden"></div>
+                </div>
+                <div id="share-btn" onclick="toggleShare()">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Notification Panel -->
+        <div id="notification-panel" class="side-panel">
+            <div class="panel-header">
+                <h3>Notifications</h3>
+                <i class="fas fa-times" onclick="toggleNotifications()"></i>
+            </div>
+            <div id="notif-list"></div>
+        </div>
+
+        <!-- Share Panel -->
+        <div id="share-panel" class="side-panel">
+            <div class="panel-header">
+                <h3>SHARE APP?</h3>
+                <i class="fas fa-times" onclick="toggleShare()"></i>
+            </div>
+            <div class="share-content">
+                <p>Copy the link below and forward to family and friends on:</p>
+                <span class="platform-list">SMS • MMS • WhatsApp • Telegram • Facebook • Threads • Instagram • X</span>
+                <div class="copy-box">
+                    <input type="text" id="share-link-input" value="https://apk.e-droid.net/apk/app3195410-1l0g4f.apk?v=35" readonly>
+                    <button onclick="copyLink()" id="copy-btn"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Page -->
+        <div id="page-menu" class="container">
+            <div class="section-header">FREE PACKAGES</div>
+            <div class="menu-grid">
+                <div class="menu-item" onclick="handleNavigation('LOW RISK PLAN')">
+                    <i class="fas fa-shield-halved"></i>
+                    <span class="menu-label">LOW RISK</span>
+                </div>
+                <div class="menu-item" onclick="handleNavigation('HIGH RISK PLAN')">
+                    <i class="fas fa-bolt"></i>
+                    <span class="menu-label">HIGH RISK</span>
+                </div>
+            </div>
+
+            <div class="section-header premium-header">PREMIUM PACKAGES</div>
+            <div class="menu-grid">
+                <div class="menu-item premium-item" onclick="handlePremiumClick('SILVER PLAN')">
+                    <i class="fas fa-medal" style="color:#C0C0C0;"></i>
+                    <span class="menu-label">SILVER PLAN</span>
+                </div>
+                <div class="menu-item premium-item" onclick="handlePremiumClick('GOLD PLAN')">
+                    <i class="fas fa-crown"></i>
+                    <span class="menu-label">GOLD PLAN</span>
+                </div>
+
+                <div class="full-btn premium-item" onclick="handlePremiumClick('DIAMOND PLAN')">
+                    <i class="fas fa-gem" style="font-size: 32px; color: #09c;"></i>
+                    <span class="menu-label">DIAMOND PLAN</span>
+                </div>
+
+                <div class="history-btn" onclick="handleNavigation('PREMIUM HISTORY')">
+                    <i class="fas fa-history"></i>
+                    <span class="menu-label" style="font-size: 14px;">PREMIUM HISTORY</span>
+                </div>
+            </div>
+
+            <footer>
+                <h4 style="margin:14px; color:#888;">Follow Us On:</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/bhifsports" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/bhifsports/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.threads.net/@bhifsports" target="_blank"><i class="fab fa-threads"></i></a>
+                    <a href="https://www.youtube.com/@bhifsports" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/bhifsports" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://whatsapp.com/channel/0029VbBGYcw30LKOZSakoV1T" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/bhifsportstips" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+                <div class="recaptcha-badge spin-hover" onclick="showLegalMenu()">
+                    <div class="recaptcha-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 12C21 16.9706 16.9706 21 12 21C9.69494 21 7.59227 20.1331 6.00573 18.7118" stroke="#ccc" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M3 12C3 7.02944 7.02944 3 12 3C14.3051 3 16.4077 3.86691 17.9943 5.28819" stroke="#66c" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M17.5 5.5L20.5 5.5L20.5 2.5" stroke="#66c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.5 18.5H3.5V21.5" stroke="#ccc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="recaptcha-text">
+                        <div class="recaptcha-title">Protected</div>
+                        <div style="color:#888;">Privacy - Terms</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- List Page (Predictions) -->
+        <div id="page-list" class="container hidden">
+            <div id="subscription-timer"></div>
+            <div id="category-title">Category</div>
+            <div id="match-container"></div>
+        </div>
+
+        <!-- Subscribe Page -->
+        <div id="page-subscribe" class="container hidden">
+            <h2 style="font-size: 18px; margin-bottom: 20px; color: var(--accent-yellow); text-align: center;">Choose a Plan</h2>
+            <div class="package-card" id="pkg-SILVER-PLAN" onclick="handlePlanCardClick('SILVER PLAN')">
+                <h4>SILVER PLAN</h4>
+                <p>Standard quality predictions with high success rate.</p>
+                <div class="price" id="price-SILVER-PLAN">$20/week</div>
+            </div>
+            <div class="package-card" id="pkg-GOLD-PLAN" onclick="handlePlanCardClick('GOLD PLAN')">
+                <h4>GOLD PLAN</h4>
+                <p>Premium goal and match result predictions.</p>
+                <div class="price" id="price-GOLD-PLAN">$35/week</div>
+            </div>
+            <div class="package-card" id="pkg-DIAMOND-PLAN" onclick="handlePlanCardClick('DIAMOND PLAN')">
+                <h4>DIAMOND PLAN</h4>
+                <p>Maximum returns with exclusive accumulator tips.</p>
+                <div class="price" id="price-DIAMOND-PLAN">$60/week</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-legal-menu" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-times close-modal" onclick="closeAllModals()"></i>
+            <h3>Legal Information</h3>
+            <button class="legal-link" onclick="showLegalText('privacy')">Privacy Policy <i class="fas fa-chevron-right"></i></button>
+            <button class="legal-link" onclick="showLegalText('terms')">Terms of Service <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div id="modal-legal-text" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-times close-modal" onclick="closeAllModals()"></i>
+            <h3 id="legal-title">Title</h3>
+            <div id="legal-body" class="scrollable-text"></div>
+            <button onclick="closeAllModals()">Close</button>
+        </div>
+    </div>
+
+    <div id="modal-choice" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-times close-modal" onclick="closeAllModals()"></i>
+            <h3>Premium Content</h3>
+            <p>This section requires subscription.</p>
+            <button onclick="goToSubscribePage()"><i class="fas fa-shopping-cart"></i> Subscribe Now</button>
+        </div>
+    </div>
+
+    <div id="modal-sub-method" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-times close-modal" onclick="closeAllModals()"></i>
+            <h3>Contact Support <span id="sub-status-header"></span></h3>
+            <div id="smart-sub-notice" style="display:none;"></div>
+            <p id="sub-method-desc">Copy your Device's Unique ID below and send to the Admin:</p>
+            <div style="background:#333; padding:10px; border-radius:8px; margin-bottom:10px;">
+                <p style="margin:0 0 5px; font-size:12px; color:#aaa;">Your Unique Device ID:</p>
+                <div style="display:flex; gap:5px;">
+                    <input type="text" id="device-id-display" readonly style="flex:1;">
+                    <button onclick="copyDeviceId()" id="copy-id-btn"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+            <div id="sub-status-display" style="margin-bottom:15px; padding:10px; background:#444;"></div>
+            <div id="contact-buttons-container">
+                <button style="background:#25D366;" onclick="window.open('https://wa.me/message/VISS342UISQWG1', '_blank')"><i class="fab fa-whatsapp"></i> WhatsApp Admin</button>
+                <button style="background:#0088cc; margin-top:10px;" onclick="window.open('https://t.me/bhifsportsadmin', '_blank')"><i class="fab fa-telegram"></i> Telegram Admin</button>
+            </div>
+            <div id="access-buttons-container" class="hidden">
+                <button style="background:var(--success-green);" onclick="handleNavigation(currentPremiumCategory); closeAllModals();"><i class="fas fa-door-open"></i> Check In</button>
+                <button id="extend-btn" style="background:#555; margin-top:10px;" onclick="toggleSubMethodsFromExtend()"><i class="fas fa-plus"></i> Extend</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offline Message -->
+    <div id="offline-message">
+        <div class="app-logo-wrapper">
+            <div class="logo-text-container">
+                <span class="logo-b">𝐁</span>
+                <span class="logo-s">𝐒</span>
+            </div>
+        </div>
+        <h2 style="color:var(--error-red);">No Connection</h2>
+        <p>Please check your internet settings.</p>
+        <button onclick="location.reload()">Retry</button>
+    </div>
+
+    <!-- JavaScript Files - FIXED PATHS -->
+    <script src="config.js"></script>
+    <script src="predictions.js"></script>
+    <script src="notifications.js"></script>
+    <script src="subscriptions.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
