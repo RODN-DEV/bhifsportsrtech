@@ -75,6 +75,16 @@
             </div>
 
             <div class="header-right">
+                <select id="lang-select" onchange="currentLang=this.value;localStorage.setItem('bhif_lang',currentLang);applyLanguage();">
+                    <option value="en">🌐 EN</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="pt">🇧🇷 PT</option>
+                    <option value="sw">🌍 SW</option>
+                </select>
+                <div id="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-sun"></i>
+                </div>
                 <div id="notification-btn" onclick="toggleNotifications()">
                     <i class="fas fa-bell"></i>
                     <div id="notif-dot" class="notif-badge hidden"></div>
