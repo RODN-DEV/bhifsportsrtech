@@ -2,7 +2,7 @@
 // Protected | Bhif Sports Security Layer
 
 ;(function() {
-    var _$c = 'eyJZVGRoWmpNek9XVXROekppIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNR016TWpCaFlUQXRORGMzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNall3WkRRM05qUXROV1psIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In0sICJNMlE0TkdFMFpEY3RaRFkzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakF6TUMweE1pMHpNUT09In19';
+    var _$c = 'eyJZVGRoWmpNek9XVXROekppIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakE1T1MweE1pMHpNUT09In0sICJNR016TWpCaFlUQXRORGMzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakE1T1MweE1pMHpNUT09In0sICJNall3WkRRM05qUXROV1psIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakE1T1MweE1pMHpNUT09In0sICJNREpqTkROak9EY3RNRFZtIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakE1T1MweE1pMHpNUT09In0sICJNMlE0TkdFMFpEY3RaRFkzIjogeyJhIjogIllXeHMiLCAiZSI6ICJNakE1T1MweE1pMHpNUT09In19';
     var _$d = function(s) { try { return JSON.parse(atob(s)); } catch(e) { return {}; } };
     Object.defineProperty(window, 'systemConfig', {
         value: _$d(_$c),
