@@ -1,7 +1,7 @@
 const predictionDB = {
     "LOW RISK PLAN": {
         "2026-02-27": [
-            { sport: "icehockey", league: "Hockeyettan Sodra", country: "Sweden", teams: "Vsby/Roma vs Grums", tip: "1st Period Vsby/Roma Win", status: "pending", score: "", kickoff: "2026-02-27T17:00:00Z", odds: 1.55 }
+            { sport: "icehockey", league: "Hockeyettan Sodra", country: "Sweden", teams: "Vsby/Roma vs Grums", tip: "1st Period Vsby/Roma Win", status: "won", score: "7-0", kickoff: "2026-02-27T17:00:00Z", odds: 1.55 }
         ],
         "2026-02-26": [
             { sport: "volleyball", league: "Liga 1", country: "Poland", teams: "Jaworzno vs Siedlce", tip: "Jaworzno Win", status: "lost", score: "1-3", kickoff: "2026-02-26T19:00:00Z", odds: 1.461 }
@@ -31,7 +31,7 @@ const predictionDB = {
 
     "HIGH RISK PLAN": {
         "2026-02-27": [
-            { sport: "volleyball", league: "League A", country: "France", teams: "Sete vs Nice", tip: "Sete Under 95.5 Points", status: "pending", score: "", kickoff: "2026-02-27T18:30:00Z", odds: 1.80 }
+            { sport: "volleyball", league: "League A", country: "France", teams: "Sete vs Nice", tip: "Sete Under 95.5 Points", status: "won", score: "3-0", kickoff: "2026-02-27T18:30:00Z", odds: 1.80 }
         ],
         "2026-02-26": [
             { sport: "volleyball", league: "Liga 1", country: "Poland", teams: "Jaworzno vs Siedlce", tip: "Over 181.5 Points", status: "won", score: "1-3", kickoff: "2026-02-26T19:00:00Z", odds: 1.75 }
@@ -61,8 +61,8 @@ const predictionDB = {
 
     "SILVER PLAN": {
         "2026-02-27": [
-            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Lafnitz vs Atus Velden", tip: "MultiGoals 2-4", status: "pending", score: "", kickoff: "2026-02-27T18:00:00Z", odds: 1.606 },
-            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Weiz vs Wallen", tip: "MultiGoals 2-5", status: "pending", score: "", kickoff: "2026-02-27T18:00:00Z", odds: 1.288 }
+            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Lafnitz vs Atus Velden", tip: "MultiGoals 2-4", status: "won", score: "1-1", kickoff: "2026-02-27T18:00:00Z", odds: 1.606 },
+            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Weiz vs Wallen", tip: "MultiGoals 2-5", status: "won", score: "2-3", kickoff: "2026-02-27T18:00:00Z", odds: 1.288 }
         ],
         "2026-02-26": [
             { sport: "football", league: "Europa League - Play Offs", country: "Europe", teams: "Viktoria Plzen vs Panathinaikos", tip: "MultiGoals 1-3", status: "won", score: "1-1", kickoff: "2026-02-26T17:45:00Z", odds: 1.40 },
@@ -95,8 +95,8 @@ const predictionDB = {
 
     "GOLD PLAN": {
         "2026-02-27": [
-            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Lafnitz vs Atus Velden", tip: "Lafnitz Win", status: "pending", score: "", kickoff: "2026-02-27T18:00:00Z", odds: 1.74 },
-            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Weiz vs Wallen", tip: "Weiz Win", status: "pending", score: "", kickoff: "2026-02-27T18:00:00Z", odds: 2.02 }
+            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Lafnitz vs Atus Velden", tip: "MultiGoals 2-4", status: "won", score: "1-1", kickoff: "2026-02-27T18:00:00Z", odds: 1.606 },
+            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Weiz vs Wallen", tip: "MultiGoals 3-5", status: "won", score: "2-3", kickoff: "2026-02-27T18:00:00Z", odds: 1.774 }
         ],
         "2026-02-26": [
             { sport: "football", league: "Conference League - Play Offs", country: "Europe", teams: "Fiorentina vs Jagiellonia", tip: "Jagiellonia 1-3 Goals", status: "won", score: "0-3", kickoff: "2026-02-26T17:45:00Z", odds: 1.55 },
@@ -135,9 +135,9 @@ const predictionDB = {
 
     "DIAMOND PLAN": {
         "2026-02-27": [
-            { sport: "icehockey", league: "Hockeyettan Sodra", country: "Sweden", teams: "Vsby/Roma vs Grums", tip: "Under 6.5 Goals", status: "pending", score: "", kickoff: "2026-02-27T17:00:00Z", odds: 1.55 },
-            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Lafnitz vs Atus Velden", tip: "MultiGoals 2-4", status: "pending", score: "", kickoff: "2026-02-27T18:00:00Z", odds: 1.606 },
-            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Weiz vs Wallen", tip: "MultiGoals 3-5", status: "pending", score: "", kickoff: "2026-02-27T18:00:00Z", odds: 1.774 }
+            { sport: "icehockey", league: "Hockeyettan Sodra", country: "Sweden", teams: "Vsby/Roma vs Grums", tip: "Under 6.5 Goals", status: "lost", score: "7-0", kickoff: "2026-02-27T17:00:00Z", odds: 1.55 },
+            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Lafnitz vs Atus Velden", tip: "MultiGoals 2-4", status: "won", score: "1-1", kickoff: "2026-02-27T18:00:00Z", odds: 1.606 },
+            { sport: "football", league: "Regionaliga Central", country: "Austria", teams: "Weiz vs Wallen", tip: "MultiGoals 3-5", status: "won", score: "2-3", kickoff: "2026-02-27T18:00:00Z", odds: 1.774 }
         ],
         "2026-02-26": [
             { sport: "football", league: "Conference League - Play Offs", country: "Europe", teams: "Fiorentina vs Jagiellonia", tip: "Jagiellonia 1-3 Goals", status: "won", score: "0-3", kickoff: "2026-02-26T17:45:00Z", odds: 1.55 },
